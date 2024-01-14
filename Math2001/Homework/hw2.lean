@@ -8,7 +8,6 @@ math2001_init
 /-! # Homework 2
 
 Don't forget to compare with the text version,
-https://hrmacbeth.github.io/math2001/Homework.html#homework-2
 for clearer statements and any special instructions. -/
 
 
