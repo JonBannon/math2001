@@ -8,8 +8,7 @@ math2001_init
 
 /-! # Homework 5
 
-Don't forget to compare with the text version,
-https://hrmacbeth.github.io/math2001/Homework.html#homework-5
+Don't forget to compare with the text version
 for clearer statements and any special instructions. -/
 
 
