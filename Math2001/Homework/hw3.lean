@@ -10,7 +10,6 @@ namespace Int
 /-! # Homework 3
 
 Don't forget to compare with the text version,
-https://hrmacbeth.github.io/math2001/Homework.html#homework-3
 for clearer statements and any special instructions. -/
 
 
