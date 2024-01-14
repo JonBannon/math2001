@@ -13,8 +13,7 @@ open Function
 
 /-! # Homework 10
 
-Don't forget to compare with the text version,
-https://hrmacbeth.github.io/math2001/Homework.html#homework-10
+Don't forget to compare with the text version
 for clearer statements and any special instructions. -/
 
 
