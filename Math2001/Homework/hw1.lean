@@ -5,11 +5,7 @@ import AutograderLib
 
 math2001_init
 
-/-! # Homework 1
-
-Don't forget to compare with the text version,
-https://hrmacbeth.github.io/math2001/Homework.html#homework-1
-for clearer statements and any special instructions. -/
+/-! # Homework 1 -/
 
 
 @[autograded 5]
