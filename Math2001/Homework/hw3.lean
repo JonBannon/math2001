@@ -9,30 +9,25 @@ namespace Int
 
 /-! # Homework 3
 
-Don't forget to compare with the text version,
+You can compare with the text version,
 for clearer statements and any special instructions. -/
 
+@[autograded 4]
+theorem problem1 {t : ℚ} (h : t = -2 ∨ t = 3) : t ^ 2 - t - 6 = 0 := by
+  sorry
+
+@[autograded 5]
+theorem problem2 {x : ℤ} : 2 * x ≠ 7 := by
+  sorry
+
+@[autograded 5]
+theorem problem3 {t : ℝ} (ht : t ^ 3 = t ^ 2) : t = 1 ∨ t = 0 := by
+  sorry
 
 @[autograded 4]
-theorem problem1 : ∃ x : ℝ, x < 0 ∧ x ^ 2 < 1 := by
+theorem problem4 : ∃ x : ℝ, x < 0 ∧ x ^ 2 < 1 := by
   sorry
 
 @[autograded 5]
-theorem problem2 (x : ℚ) : ∃ y : ℚ, y ^ 2 > x := by
-  sorry
-
-@[autograded 5]
-theorem problem3 {x : ℤ} (hx : Odd x) : Odd (x ^ 3) := by
-  sorry
-
-@[autograded 6]
-theorem problem4 (n : ℤ) : Odd (5 * n ^ 2 + 3 * n + 7) := by
-  sorry
-
-@[autograded 2]
-theorem problem5 : (3 : ℤ) ∣ -9 := by
-  sorry
-
-@[autograded 3]
-theorem problem6 : ¬(3 : ℤ) ∣ -10 := by
+theorem problem5 (x : ℚ) : ∃ y : ℚ, y ^ 2 > x := by
   sorry

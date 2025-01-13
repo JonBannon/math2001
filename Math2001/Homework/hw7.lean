@@ -1,58 +1,65 @@
 /- Copyright (c) Heather Macbeth, 2023.  All rights reserved. -/
-import Mathlib.Tactic.GCongr
+import Mathlib.Data.Real.Basic
 import Library.Basic
 import Library.Tactic.ModEq
 import AutograderLib
 
 math2001_init
+set_option pp.funBinderTypes true
 
+open Function
 
 /-! # Homework 7
 
 Don't forget to compare with the text version
 for clearer statements and any special instructions. -/
 
-
-
+/- If you think that the theorem in problem4a is true, prove it.
+   If you think it’s false, instead solve problem4b (the negation!) -/
 @[autograded 4]
-theorem problem1 (n : ℕ) : 5 ^ n ≡ 1 [ZMOD 8] ∨ 5 ^ n ≡ 5 [ZMOD 8] := by
+theorem problem4a : Surjective (fun (x : ℝ) ↦ 2 * x) := by
   sorry
 
 @[autograded 4]
-theorem problem2 : forall_sufficiently_large n : ℕ, (3:ℤ) ^ n ≥ 2 ^ n + 100 := by
-  dsimp
+theorem problem4b : ¬ Surjective (fun (x : ℝ) ↦ 2 * x) := by
   sorry
 
-def y : ℕ → ℕ
-  | 0 => 2
-  | n + 1 => (y n) ^ 2
 
-@[autograded 4]
-theorem problem3 (n : ℕ) : y n = 2 ^ (2 ^ n) := by
+namespace Int
+
+/- If you think that the theorem in problem5a is true, prove it.
+   If you think it’s false, instead solve problem5b (the negation!) -/
+@[autograded 5]
+theorem problem5a : Surjective (fun (x : ℤ) ↦ 2 * x) := by
   sorry
-
-def B : ℕ → ℚ
-  | 0 => 0
-  | n + 1 => B n + (n + 1 : ℚ) ^ 2
-
-@[autograded 4]
-theorem problem4 (n : ℕ) : B n = n * (n + 1) * (2 * n + 1) / 6 := by
-  sorry
-
-def b : ℕ → ℤ
-  | 0 => 0
-  | 1 => 1
-  | n + 2 => 5 * b (n + 1) - 6 * b n
-
-@[autograded 4]
-theorem problem5 (n : ℕ) : b n = 3 ^ n - 2 ^ n := by
-  sorry
-
-def r : ℕ → ℤ
-  | 0 => 2
-  | 1 => 0
-  | n + 2 => 2 * r (n + 1) + r n
 
 @[autograded 5]
-theorem problem6 : forall_sufficiently_large n : ℕ, r n ≥ 2 ^ n := by
+theorem problem5b : ¬ Surjective (fun (x : ℤ) ↦ 2 * x) := by
+  sorry
+
+end Int
+
+/- If you think that the theorem in problem6a is true, prove it.
+   If you think it’s false, instead solve problem6b (the negation!) -/
+@[autograded 5]
+theorem problem6a : ∀ (f : ℚ → ℚ), Injective f → Injective (fun x ↦ f x + 1) := by
+  sorry
+
+@[autograded 5]
+theorem problem6b : ¬ ∀ (f : ℚ → ℚ), Injective f → Injective (fun x ↦ f x + 1) := by
+  sorry
+
+@[autograded 5]
+theorem problem7 {f : X → Y} (hf : Surjective f) {g : Y → Z} (hg : Surjective g) :
+    Surjective (g ∘ f) := by
+  sorry
+
+/- If you think that the theorem in problem8a is true, prove it.
+   If you think it’s false, instead solve problem8b (the negation!) -/
+@[autograded 4]
+theorem problem8a : Bijective (fun (x : ℝ) ↦ 4 - 3 * x) := by
+  sorry
+
+@[autograded 4]
+theorem problem8b : ¬ Bijective (fun (x : ℝ) ↦ 4 - 3 * x) := by
   sorry

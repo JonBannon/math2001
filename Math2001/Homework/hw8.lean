@@ -1,8 +1,7 @@
 /- Copyright (c) Heather Macbeth, 2023.  All rights reserved. -/
 import Mathlib.Data.Real.Basic
+import Library.Theory.InjectiveSurjective
 import Library.Basic
-import Library.Tactic.ModEq
-import Library.Theory.ParityModular
 import AutograderLib
 
 math2001_init
@@ -17,58 +16,56 @@ Don't forget to compare with the text version
 for clearer statements and any special instructions. -/
 
 
-namespace Nat
-
-@[autograded 5]
-theorem problem1 (n : ℕ) (hn : 0 < n) : ∃ a x, Odd x ∧ n = 2 ^ a * x := by
-  sorry
-
-end Nat
-
-
-def pascal : ℕ → ℕ → ℕ
-  | a, 0 => 1
-  | 0, b + 1 => 1
-  | a + 1, b + 1 => pascal (a + 1) b + pascal a (b + 1)
-termination_by _ a b => a + b
-
-@[autograded 5]
-theorem problem2 (m n : ℕ) : pascal m n = pascal n m := by
-  match m, n with
-  | 0, 0 => rw [pascal]
-  | a + 1, 0 => rw [pascal, pascal]
-  | 0, b + 1 => rw [pascal, pascal]
-  | a + 1, b + 1 =>
-    sorry
-termination_by _ a b => a + b
-
-
 @[autograded 4]
-theorem problem4a : Surjective (fun (x : ℝ) ↦ 2 * x) := by
+theorem problem1 : Surjective (fun ((a, b) : ℚ × ℕ) ↦ a ^ b) := by
   sorry
 
 @[autograded 4]
-theorem problem4b : ¬ Surjective (fun (x : ℝ) ↦ 2 * x) := by
+theorem problem2 :
+    ¬Injective (fun ((x, y, z) : ℝ × ℝ × ℝ) ↦ (x + y + z, x + 2 * y + 3 * z)) := by
   sorry
 
-
-namespace Int
-
-@[autograded 5]
-theorem problem5a : Surjective (fun (x : ℤ) ↦ 2 * x) := by
+@[autograded 4]
+theorem problem3 : ¬ Surjective (fun ((x, y) : ℚ × ℚ) ↦ x ^ 2 + y ^ 2) := by
   sorry
 
-@[autograded 5]
-theorem problem5b : ¬ Surjective (fun (x : ℤ) ↦ 2 * x) := by
+@[autograded 4]
+theorem problem4 : Bijective (fun ((r, s) : ℚ × ℚ) ↦ (s, r - s)) := by
+  rw [bijective_iff_exists_inverse]
+  use fun (a, b) ↦ (sorry, sorry)
   sorry
 
-end Int
-
-
-@[autograded 5]
-theorem problem6a : ∀ (f : ℚ → ℚ), Injective f → Injective (fun x ↦ f x + 1) := by
+/- If you think that the theorem in problem5a is true, prove it.
+   If you think it’s false, instead solve problem5b (the negation!) -/
+@[autograded 4]
+theorem problem5a : { m : ℤ | m ≥ 10 } ⊆ { n : ℤ | n ^ 3 - 7 * n ^ 2 ≥ 4 * n } := by
   sorry
 
-@[autograded 5]
-theorem problem6b : ¬ ∀ (f : ℚ → ℚ), Injective f → Injective (fun x ↦ f x + 1) := by
+@[autograded 4]
+theorem problem5b : { m : ℤ | m ≥ 10 } ⊈ { n : ℤ | n ^ 3 - 7 * n ^ 2 ≥ 4 * n } := by
+  sorry
+
+/- If you think that the theorem in problem6a is true, prove it.
+   If you think it’s false, instead solve problem6b (the negation!) -/
+@[autograded 4]
+theorem problem6a : { t : ℝ | t ^ 2 - 5 * t + 4 = 0 } = { s : ℝ | s = 4 } := by
+  sorry
+
+@[autograded 4]
+theorem problem6b : { t : ℝ | t ^ 2 - 5 * t + 4 = 0 } ≠ { s : ℝ | s = 4 } := by
+  sorry
+
+/- If you think that the theorem in problem7a is true, prove it.
+   If you think it’s false, instead solve problem7b (the negation!) -/
+@[autograded 4]
+theorem problem7a : {1, 2, 3} = {1, 2} := by
+  sorry
+
+@[autograded 4]
+theorem problem7b : {1, 2, 3} ≠ {1, 2} := by
+  sorry
+
+@[autograded 4]
+theorem problem8 : { r : ℤ | r ≡ 7 [ZMOD 10] }
+    ⊆ { s : ℤ | s ≡ 1 [ZMOD 2] } ∩ { t : ℤ | t ≡ 2 [ZMOD 5] } := by
   sorry
