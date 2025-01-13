@@ -19,7 +19,7 @@ for clearer statements and any special instructions. -/
 namespace Nat
 
 @[autograded 5]
-theorem problem7 (n : ℕ) (hn : 0 < n) : ∃ a x, Odd x ∧ n = 2 ^ a * x := by
+theorem problem1 (n : ℕ) (hn : 0 < n) : ∃ a x, Odd x ∧ n = 2 ^ a * x := by
   sorry
 
 end Nat
@@ -31,7 +31,7 @@ def pascal : ℕ → ℕ → ℕ
 termination_by _ a b => a + b
 
 @[autograded 5]
-theorem problem8 (m n : ℕ) : pascal m n = pascal n m := by
+theorem problem2 (m n : ℕ) : pascal m n = pascal n m := by
   match m, n with
   | 0, 0 => rw [pascal]
   | a + 1, 0 => rw [pascal, pascal]
