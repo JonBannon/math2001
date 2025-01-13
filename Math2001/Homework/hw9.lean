@@ -18,33 +18,33 @@ for clearer statements and any special instructions. -/
 local infix:50 "∼" => fun (x y : ℤ) ↦ y ≡ x + 1 [ZMOD 5]
 
 @[autograded 2]
-theorem problem51a : Reflexive (· ∼ ·) := by
+theorem problem1a : Reflexive (· ∼ ·) := by
   sorry
 
 @[autograded 2]
-theorem problem51b : ¬ Reflexive (· ∼ ·) := by
+theorem problem1b : ¬ Reflexive (· ∼ ·) := by
   sorry
 
 @[autograded 2]
-theorem problem52a : Symmetric (· ∼ ·) := by
+theorem problem2a : Symmetric (· ∼ ·) := by
   sorry
 
 @[autograded 2]
-theorem problem52b : ¬ Symmetric (· ∼ ·) := by
+theorem problem2b : ¬ Symmetric (· ∼ ·) := by
   sorry
 
 @[autograded 3]
-theorem problem53a : AntiSymmetric (· ∼ ·) := by
+theorem problem3a : AntiSymmetric (· ∼ ·) := by
   sorry
 
 @[autograded 3]
-theorem problem53b : ¬ AntiSymmetric (· ∼ ·) := by
+theorem problem3b : ¬ AntiSymmetric (· ∼ ·) := by
   sorry
 
 @[autograded 2]
-theorem problem54a : Transitive (· ∼ ·) := by
+theorem problem4a : Transitive (· ∼ ·) := by
   sorry
 
 @[autograded 2]
-theorem problem54b : ¬ Transitive (· ∼ ·) := by
+theorem problem4b : ¬ Transitive (· ∼ ·) := by
   sorry
