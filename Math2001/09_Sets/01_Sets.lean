@@ -24,7 +24,6 @@ example : 10 ∉ {n : ℕ | Odd n} := by
   numbers
 end Nat
 
-
 example : {a : ℕ | 4 ∣ a} ⊆ {b : ℕ | 2 ∣ b} := by
   dsimp [Set.subset_def] -- optional
   intro a ha
